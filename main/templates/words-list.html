@@ -13,8 +13,8 @@
         <p>00:50</p>
         <h1 style="font-weight: bold;">Remember these words:</h1>
         <ol>
-            {% for word in words %}
-                <li>{{ word }}</li>
+            {% for word in object_list %}
+                <li>{{ word.word }}</li>
             {% endfor %}
         </ol>
         <a href="{% url 'recall' %}"><button class="btn btn-info" style="font-weight: bold;">RECALL NOW</button></a>
