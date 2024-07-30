@@ -18,3 +18,9 @@ class Guess(models.Model):
     def get_absolute_url(self):
         return reverse('recall')
     
+class Level(models.Model):
+    level = models.IntegerField()
+
+    def __str__(self):
+        return str(self.level)
+    

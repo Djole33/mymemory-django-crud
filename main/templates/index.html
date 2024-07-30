@@ -11,9 +11,11 @@
         <h1>Welcome To MyMemory!</h1>
         <h3>Choose a level and challenge your memory by clicking the button below.</h3>
         <br /> <br />
-        <input style="width: 40%;margin-left: auto;margin-right: auto;" type="text" class="startgame-input form-control" placeholder="Enter level you want to start" value="1">
-        <br /> <br />
-        <a href="{% url 'words-list' %}"><button class="btn btn-info">Challenge Me</button></a>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'words-list' %}"><button type="submit" class="btn btn-primary">Start</button></a>
+        </form>
     </div>
 </body>
 </html>
